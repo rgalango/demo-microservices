@@ -4,11 +4,14 @@ endpoints:
     
 server:
   port: 8888
- 
+
+management:
+  security:
+    enabled : false 
 spring:
   cloud:
     config:
       server:
         git:
           #uri: https://github.com/rgalango/microservice-poc-config/
-          uri: https://github.com/rgalango/archaius-config
+          uri: https://github.com/rgalango/demo-spring-cloud-security-conf.git
