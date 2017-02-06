@@ -17,7 +17,7 @@ spring:
 zuul:
   routes:    
     microservices-users-bbdd:
-      path: /api/customers/**
+      path: /api/app-customers/**
       serviceId: microservice-customer
     microservice-mongo-comments:
       path: /api/app-comments/**

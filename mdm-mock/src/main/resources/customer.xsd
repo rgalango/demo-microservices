@@ -8,8 +8,25 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <xs:element name="getCustomersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="page" type="xs:int"/>
+                <xs:element name="size" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <xs:element name="getCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType> 
+    </xs:element>
+    
+    <xs:element name="getCustomersResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="customer" type="tns:customer"/>

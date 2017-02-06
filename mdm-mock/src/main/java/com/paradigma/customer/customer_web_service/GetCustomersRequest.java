@@ -10,7 +10,6 @@ package com.paradigma.customer.customer_web_service;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="customer" type="{http://paradigma.com/customer/customer-web-service}customer"/>
+ *         &lt;element name="page" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="size" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,45 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "customer"
+    "page",
+    "size"
 })
-@XmlRootElement(name = "getCustomerResponse")
-public class GetCustomerResponse {
+@XmlRootElement(name = "getCustomersRequest")
+public class GetCustomersRequest {
 
-    @XmlElement(required = true)
-    protected Customer customer;
+    protected int page;
+    protected int size;
 
     /**
-     * Obtiene el valor de la propiedad customer.
+     * Obtiene el valor de la propiedad page.
      * 
-     * @return
-     *     possible object is
-     *     {@link Customer }
-     *     
      */
-    public Customer getCustomer() {
-        return customer;
+    public int getPage() {
+        return page;
     }
 
     /**
-     * Define el valor de la propiedad customer.
+     * Define el valor de la propiedad page.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Customer }
-     *     
      */
-    public void setCustomer(Customer value) {
-        this.customer = value;
+    public void setPage(int value) {
+        this.page = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad size.
+     * 
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Define el valor de la propiedad size.
+     * 
+     */
+    public void setSize(int value) {
+        this.size = value;
     }
 
 }

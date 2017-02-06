@@ -53,4 +53,16 @@ public class CustomerRepository {
 
 		return result;
 	}
+	
+	public List<Customer> getCustomers(Integer size,Integer page) {
+		
+		if(page * size > customers.size()){
+			return new ArrayList<>();
+		}
+		if(page * size + size > customers.size()){
+			return customers.subList(page * size , customers.size());
+		}
+
+		return customers.subList(page * size , page * size + size);
+	}
 }
